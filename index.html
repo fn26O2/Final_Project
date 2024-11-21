@@ -4,182 +4,70 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitcoin Data Visualization</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <script src="https://cdn.plot.ly/plotly-latest.min.js" defer></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js" defer></script>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            background-color: #f8f9fa;
-        }
-        header {
-            background: linear-gradient(45deg, #f7931a, #ffc107);
-            color: white;
-            padding: 20px;
-            border-radius: 8px;
-        }
-        footer {
-            text-align: center;
-            padding: 10px;
-            background: #343a40;
-            color: white;
-            margin-top: 20px;
-        }
-    </style>
+    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
 </head>
 <body>
+    <header>
+        <h1>Bitcoin Data Visualization</h1>
+        <p>Analyzing Bitcoin prices, market trends, and its comparison with traditional money</p>
+    </header>
     <div class="container">
-        <!-- Header -->
-        <header class="text-center my-4">
-            <h1>Bitcoin Data Visualization</h1>
-            <p class="lead">Analyzing Bitcoin prices, market trends, and its comparison with traditional money</p>
-        </header>
-        
-        <!-- Navigation -->
-        <nav class="navbar navbar-expand-lg navbar-light bg-light rounded mb-4">
-            <div class="container-fluid">
-                <a class="navbar-brand" href="#">Bitcoin Insights</a>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                    <span class="navbar-toggler-icon"></span>
-                </button>
-                <div class="collapse navbar-collapse" id="navbarNav">
-                    <ul class="navbar-nav ms-auto">
-                        <li class="nav-item">
-                            <a class="nav-link" href="#charts">Charts</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#tables">Table</a>
-                        </li>
-                        <li class="nav-item">
-                            <a class="nav-link" href="#comparison">Conclusion</a>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </nav>
-        
-        <!-- Charts Section -->
-        <section id="charts" class="my-4">
-            <h2 class="text-center mb-4">Bitcoin Market Analysis</h2>
-            <div id="chart1" class="mb-4"></div>
-            <p class="text-center">Bitcoin price evolution over 2021</p>
-            
-            <div id="chart2" class="mb-4"></div>
-            <p class="text-center">Bitcoin market capitalization vs transaction volume</p>
-
-            <div id="chart3" class="mb-4"></div>
-            <p class="text-center">Bitcoin price vs gold value</p>
-        </section>
-        
-        <!-- Table Section -->
-        <section id="tables" class="my-4">
-            <h2 class="text-center">Bitcoin Prices Table</h2>
-            <table class="table table-striped table-hover">
-                <thead class="table-dark">
-                    <tr>
-                        <th>Date</th>
-                        <th>Price</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td>2021-01-01</td>
-                        <td>$29,000</td>
-                    </tr>
-                    <tr>
-                        <td>2021-02-01</td>
-                        <td>$33,000</td>
-                    </tr>
-                    <tr>
-                        <td>2021-03-01</td>
-                        <td>$45,000</td>
-                    </tr>
-                    <tr>
-                        <td>2021-04-01</td>
-                        <td>$60,000</td>
-                    </tr>
-                </tbody>
+        <div class="section">
+            <h2>Introduction</h2>
+            <p>
+                Bitcoin, introduced in 2009 by an anonymous entity known as Satoshi Nakamoto, revolutionized the financial world as the first decentralized digital currency. 
+                Powered by blockchain technology, Bitcoin enables secure, transparent, and immutable transactions without relying on intermediaries like banks.
+            </p>
+        </div>
+        <div class="image">
+            <img src="https://www.bitcanuck.ca/blog/wp-content/uploads/2018/10/World-Map_Infographics_Bitcoin-Status-Worldwide-min.png" 
+                 alt="Bitcoin Status Worldwide">
+        </div>
+        <div class="section" id="charts">
+            <h2>Bitcoin Market Analysis</h2>
+            <canvas id="price-chart" class="chart"></canvas>
+            <canvas id="market-cap-chart" class="chart"></canvas>
+            <canvas id="price-gold-chart" class="chart"></canvas>
+        </div>
+        <div class="section" id="table">
+            <h2>Bitcoin Prices Table</h2>
+            <table>
+                <tr>
+                    <th>Date</th>
+                    <th>Price</th>
+                </tr>
+                <tr>
+                    <td>2023-01-01</td>
+                    <td>$16,500</td>
+                </tr>
+                <tr>
+                    <td>2023-06-01</td>
+                    <td>$30,000</td>
+                </tr>
+                <tr>
+                    <td>2023-12-01</td>
+                    <td>$42,000</td>
+                </tr>
+                <tr>
+                    <td>2024-04-01</td>
+                    <td>$48,000</td>
+                </tr>
             </table>
-        </section>
-        
-        <!-- Comparison Section -->
-        <section id="comparison" class="my-4">
-            <h2 class="text-center">Conclusion: Bitcoin vs Traditional Money</h2>
+        </div>
+        <div class="section" id="conclusion">
+            <h2>Conclusion: Bitcoin vs Traditional Money</h2>
             <p>
-                Bitcoin is a digital currency that operates independently of central banks, unlike traditional money. 
-                While Bitcoin provides decentralization, high volatility in its price makes it less stable compared to fiat money. 
-                On the other hand, gold, as a tangible asset, offers long-term value retention but lacks the flexibility of digital currencies.
+                Bitcoin continues to gain traction as a digital asset, offering decentralization and flexibility. However, its price remains volatile compared to traditional fiat money and gold.
             </p>
-            <p>
-                In the graph above, we compared Bitcoin prices to gold, showcasing its rapid growth but also its price swings. This demonstrates its potential as a high-risk, high-reward investment.
-            </p>
-        </section>
-
-        <!-- Footer -->
-        <footer>
-            <p>&copy; 2024 Bitcoin Analytics. All rights reserved.</p>
-        </footer>
+        </div>
+        <div class="image">
+            <img src="https://i.pinimg.com/originals/4a/b5/7c/4ab57c61c56e59c60c7fa5f476c89baa.jpg" alt="Bitcoin and Gold Comparison">
+        </div>
     </div>
-
-    <!-- JavaScript Section -->
-    <script>
-        document.addEventListener('DOMContentLoaded', function() {
-            // Chart 1: Bitcoin Price Evolution
-            Plotly.newPlot('chart1', [{
-                x: ['2021-01-01', '2021-02-01', '2021-03-01', '2021-04-01'],
-                y: [29000, 33000, 45000, 60000],
-                type: 'scatter',
-                mode: 'lines+markers',
-                line: { color: '#f7931a' }
-            }], {
-                title: 'Bitcoin Price Evolution',
-                xaxis: { title: 'Date' },
-                yaxis: { title: 'Price in USD' }
-            });
-
-            // Chart 2: Market Capitalization vs Volume
-            Plotly.newPlot('chart2', [
-                {
-                    x: ['2021-01', '2021-02', '2021-03', '2021-04'],
-                    y: [600, 750, 1000, 1200],  // Market Cap in billions
-                    name: 'Market Cap',
-                    type: 'bar'
-                },
-                {
-                    x: ['2021-01', '2021-02', '2021-03', '2021-04'],
-                    y: [200, 250, 300, 350],  // Volume in billions
-                    name: 'Transaction Volume',
-                    type: 'bar'
-                }
-            ], {
-                title: 'Market Capitalization vs Transaction Volume',
-                barmode: 'group',
-                xaxis: { title: 'Month' },
-                yaxis: { title: 'Value in Billions' }
-            });
-
-            // Chart 3: Bitcoin vs Gold
-            Plotly.newPlot('chart3', [
-                {
-                    x: ['2021-01', '2021-02', '2021-03', '2021-04'],
-                    y: [29000, 33000, 45000, 60000],
-                    name: 'Bitcoin',
-                    type: 'scatter',
-                    line: { color: '#f7931a' }
-                },
-                {
-                    x: ['2021-01', '2021-02', '2021-03', '2021-04'],
-                    y: [1800, 1850, 1750, 1700],  // Gold price per ounce
-                    name: 'Gold',
-                    type: 'scatter',
-                    line: { color: '#ffd700' }
-                }
-            ], {
-                title: 'Bitcoin Price vs Gold Price',
-                xaxis: { title: 'Date' },
-                yaxis: { title: 'Price in USD' }
-            });
-        });
-    </script>
+    <footer>
+        <p>&copy; 2024 Bitcoin Analytics. All rights reserved.</p>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="scripts.js"></script> <!-- Enlace al archivo JS -->
 </body>
 </html>
