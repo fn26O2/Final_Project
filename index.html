@@ -4,38 +4,34 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bitcoin Data Visualization</title>
-    <link rel="stylesheet" href="styles.css"> <!-- Enlace al archivo CSS -->
+    <link rel="stylesheet" href="styles.css"> <!-- Asegúrate de que esta ruta sea correcta -->
 </head>
 <body>
     <header>
         <h1>Bitcoin Data Visualization</h1>
         <p>Analyzing Bitcoin prices, market trends, and its comparison with traditional money</p>
     </header>
-    <div class="container">
-        <div class="section">
-            <h2>Introduction</h2>
-            <p>
-                Bitcoin, introduced in 2009 by an anonymous entity known as Satoshi Nakamoto, revolutionized the financial world as the first decentralized digital currency. 
-                Powered by blockchain technology, Bitcoin enables secure, transparent, and immutable transactions without relying on intermediaries like banks.
-            </p>
-        </div>
-        <div class="image">
-            <img src="https://www.bitcanuck.ca/blog/wp-content/uploads/2018/10/World-Map_Infographics_Bitcoin-Status-Worldwide-min.png" 
-                 alt="Bitcoin Status Worldwide">
-        </div>
-        <div class="section" id="charts">
-            <h2>Bitcoin Market Analysis</h2>
-            <canvas id="price-chart" class="chart"></canvas>
-            <canvas id="market-cap-chart" class="chart"></canvas>
-            <canvas id="price-gold-chart" class="chart"></canvas>
-        </div>
-        <div class="section" id="table">
-            <h2>Bitcoin Prices Table</h2>
-            <table>
+    
+    <section>
+        <h2>Introduction</h2>
+        <p>Bitcoin, introduced in 2009 by an anonymous entity known as Satoshi Nakamoto, revolutionized the financial world as the first decentralized digital currency. Powered by blockchain technology, Bitcoin enables secure, transparent, and immutable transactions without relying on intermediaries like banks.</p>
+    </section>
+    
+    <section>
+        <h2>Bitcoin Market Analysis</h2>
+        <!-- Aquí podrías agregar más contenido o gráficos -->
+    </section>
+    
+    <section>
+        <h2>Bitcoin Prices Table</h2>
+        <table>
+            <thead>
                 <tr>
                     <th>Date</th>
                     <th>Price</th>
                 </tr>
+            </thead>
+            <tbody>
                 <tr>
                     <td>2023-01-01</td>
                     <td>$16,500</td>
@@ -52,22 +48,19 @@
                     <td>2024-04-01</td>
                     <td>$48,000</td>
                 </tr>
-            </table>
-        </div>
-        <div class="section" id="conclusion">
-            <h2>Conclusion: Bitcoin vs Traditional Money</h2>
-            <p>
-                Bitcoin continues to gain traction as a digital asset, offering decentralization and flexibility. However, its price remains volatile compared to traditional fiat money and gold.
-            </p>
-        </div>
-        <div class="image">
-            <img src="https://i.pinimg.com/originals/4a/b5/7c/4ab57c61c56e59c60c7fa5f476c89baa.jpg" alt="Bitcoin and Gold Comparison">
-        </div>
-    </div>
+            </tbody>
+        </table>
+    </section>
+    
+    <section>
+        <h2>Conclusion: Bitcoin vs Traditional Money</h2>
+        <p>Bitcoin continues to gain traction as a digital asset, offering decentralization and flexibility. However, its price remains volatile compared to traditional fiat money and gold.</p>
+    </section>
+    
     <footer>
-        <p>&copy; 2024 Bitcoin Analytics. All rights reserved.</p>
+        <p>© 2024 Bitcoin Analytics. All rights reserved.</p>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-    <script src="scripts.js"></script> <!-- Enlace al archivo JS -->
+    
+    <script src="scripts.js"></script> <!-- Asegúrate de que esta ruta sea correcta -->
 </body>
 </html>
